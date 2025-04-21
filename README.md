@@ -12,11 +12,11 @@ python3 -m venv venv
 
 
 Activate:
-  Mac:
-  source venv/bin/activate
-  
-  Windows:
-  venv\Scripts\activate
+	Mac:
+	source venv/bin/activate
+	  
+	Windows:
+	venv\Scripts\activate
 
 Install pinecone:
 pip3 install pinecone
