@@ -1,7 +1,5 @@
 import pandas as pd
 import pinecone
-import time
-import hashlib
 from dotenv import load_dotenv
 import os
 load_dotenv()
@@ -47,7 +45,8 @@ try:
     filtered_results = index.query(
         namespace="books",
         id='124858c5e447c61c3193834e4e6e6d01',
-        include_metadata=True
+        include_metadata=True,
+        top_k=5,
     )
 
     print_query_results(filtered_results, "filtered search for high-rated books")
