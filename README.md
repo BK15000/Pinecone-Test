@@ -11,10 +11,9 @@ Make venv:
 python3 -m venv venv
 
 
-Activate:
-	Mac:
-	source venv/bin/activate
-	  
+Activate: 
+ 	Mac:
+  	source venv/bin/activate
 	Windows:
 	venv\Scripts\activate
 
