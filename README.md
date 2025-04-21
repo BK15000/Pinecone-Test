@@ -22,7 +22,7 @@ Windows:
  
 	venv\Scripts\activate
 
-Install pinecone:
+Install pinecone/dependencies into venv:
 
 	pip3 install pinecone
 	pip3 install pandas
