@@ -38,25 +38,25 @@ def get_query_embedding(query_text):
     
 
 
-# QUERY TYPE Example: Filtering/Projecting
-print("\n--- QUERY TYPE Example: Search for ID ---")
+# QUERY TYPE 1: Search by ID
+print("\n--- QUERY TYPE 1: Search for ID ---")
 
 try:
     filtered_results = index.query(
         namespace="books",
         id='124858c5e447c61c3193834e4e6e6d01',
         include_metadata=True,
-        top_k=5,
+        top_k = 5
     )
 
-    print_query_results(filtered_results, "filtered search for high-rated books")
+    print_query_results(filtered_results, "Search by ID")
 except Exception as e:
     print(f"Error during filtered search: {e}")
 
 
 
-# QUERY TYPE 1: Filtering/Projecting 
-print("\n--- QUERY TYPE 1: Metatda Filtering ---")
+# QUERY TYPE 2: Metadata Filtering
+print("\n--- QUERY TYPE 2: Metadata Filtering ---")
 query_text = "book" # Just a placeholder vector as all instances are books
 query_embedding = get_query_embedding(query_text)
 
@@ -80,8 +80,8 @@ except Exception as e:
 
 
 
-# QUERY TYPE 2: Semantic Search (Vector similarity only)
-print("\n--- QUERY TYPE 2: Semantic Search ---")
+# QUERY TYPE 3: Semantic Search 
+print("\n--- QUERY TYPE 3: Semantic Search ---")
 semantic_query = "science fiction with aliens and space travel"
 semantic_embedding = get_query_embedding(semantic_query)
 
@@ -93,14 +93,14 @@ try:
         include_metadata=True
     )
     
-    print_query_results(semantic_results, "semantic search for sci-fi books")
+    print_query_results(semantic_results, "semantic search for sci-fi books about aliens and space travel")
 except Exception as e:
     print(f"Error during semantic search: {e}")
 
 
 
-
-print("\n--- QUERY TYPE 3: Hybrid Search ---")
+# QUERY TYPE 4: Hybrid Search (Semantic + Metadata)
+print("\n--- QUERY TYPE 4: Hybrid Search ---")
 hybrid_query = "romance novels"
 hybrid_embedding = get_query_embedding(hybrid_query)
 
